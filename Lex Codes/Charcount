@@ -1,0 +1,13 @@
+%{ 
+#include <stdio.h> 
+int count = 0; 
+%} 
+%% 
+[a-zA-Z]+   { count += yyleng; } 
+%% 
+int main() { 
+printf("Enter a string: "); 
+yylex(); 
+printf("\nNumber of characters: %d\n", count); 
+return 0; 
+}
